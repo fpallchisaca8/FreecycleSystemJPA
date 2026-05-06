@@ -20,7 +20,7 @@ public class TransferDAO {
 	}
 
 	public void saveSchedule(String itemId, String location, String time) {
-        String sqlMeeting = "insert into meetings (item_id, location, time) values (?, ?, ?)";
+        String sqlMeeting = "insert into meetings (item_id, site_id, time_id) values (?, ?, ?)";
         jdbcTemplate.update(sqlMeeting, itemId, location, time);
         
         String sqlStatus = "update offers set status='Scheduled' where item_id=?";

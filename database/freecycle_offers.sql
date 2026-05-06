@@ -23,11 +23,11 @@ DROP TABLE IF EXISTS `offers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `offers` (
-  `offers_id` int NOT NULL,
+  `offer_id` int NOT NULL,
   `status` varchar(45) DEFAULT NULL,
   `recipient_id` varchar(45) NOT NULL,
   `item_id` varchar(45) NOT NULL,
-  PRIMARY KEY (`offers_id`)
+  PRIMARY KEY (`offer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
