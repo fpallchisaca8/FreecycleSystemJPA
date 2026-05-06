@@ -16,28 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `meeting`
+-- Table structure for table `offers`
 --
 
-DROP TABLE IF EXISTS `meeting`;
+DROP TABLE IF EXISTS `offers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `meeting` (
-  `meeting_id` int NOT NULL,
+CREATE TABLE `offers` (
+  `offers_id` int NOT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `recipient_id` varchar(45) NOT NULL,
   `item_id` varchar(45) NOT NULL,
-  `site_id` varchar(45) DEFAULT NULL,
-  `time_id` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`meeting_id`)
+  PRIMARY KEY (`offers_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `meeting`
+-- Dumping data for table `offers`
 --
 
-LOCK TABLES `meeting` WRITE;
-/*!40000 ALTER TABLE `meeting` DISABLE KEYS */;
-/*!40000 ALTER TABLE `meeting` ENABLE KEYS */;
+LOCK TABLES `offers` WRITE;
+/*!40000 ALTER TABLE `offers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `offers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
