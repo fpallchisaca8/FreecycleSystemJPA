@@ -1,6 +1,18 @@
 package edu.lawrence.auction.core;
 
+import edu.lawrence.auction.interfaces.dtos.ProfileDTO;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class Profile {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String profile_id;
+	@OneToOne
 	private String user;
 	private String fullname;
 	private String email;
@@ -10,8 +22,19 @@ public class Profile {
 	private boolean ispublic;
 	
 	public Profile() {}
+	
+	public Profile(ProfileDTO core) {
+		this.user = core.getUserId();
+		this.fullname = core.getFullName();
+		this.email = core.getEmail();
+		this.phone = core.getPhone();
+		this.general_location = core.getGeneral_location();
+		this.bio = core.getBio();
+		this.ispublic = core.getIsPublic();
+	}
 
-	public String getUser() {
+
+	public String getUserId() {
 		return user;
 	}
 
@@ -19,11 +42,11 @@ public class Profile {
 		this.user = user;
 	}
 
-	public String getFullname() {
+	public String getFullName() {
 		return fullname;
 	}
 
-	public void setFullname(String fullname) {
+	public void setFullName(String fullname) {
 		this.fullname = fullname;
 	}
 
@@ -59,11 +82,11 @@ public class Profile {
 		this.bio = bio;
 	}
 
-	public boolean getIspublic() {
+	public boolean getIsPublic() {
 		return ispublic;
 	}
 
-	public void setIspublic(boolean ispublic) {
+	public void setIsPublic(boolean ispublic) {
 		this.ispublic = ispublic;
 	}
 }

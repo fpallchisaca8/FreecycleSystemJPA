@@ -84,8 +84,8 @@ public class UserDAO {
               
         String profileSQL = "insert into profile(user,fullname,email,phone,general_location,bio,public) values(?,?,?,?,?,?,?)";
         try {
-        	jdbcTemplate.update(profileSQL,userid,profile.getFullname(),profile.getEmail(),
-        			profile.getPhone(),profile.getGeneral_location(),profile.getBio(),profile.getIspublic());
+        	jdbcTemplate.update(profileSQL,userid,profile.getFullName(),profile.getEmail(),
+        			profile.getPhone(),profile.getGeneral_location(),profile.getBio(),profile.getIsPublic());
         } catch(Exception ex) {
         	ex.printStackTrace();
         	return "Error";
