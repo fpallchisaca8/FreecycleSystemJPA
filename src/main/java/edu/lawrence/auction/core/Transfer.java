@@ -1,7 +1,18 @@
 package edu.lawrence.auction.core;
 
+import edu.lawrence.auction.interfaces.dtos.TransferDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Transfer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String transfer_id;
+	@ManyToOne
 	private String item_id;
 	private String item_title;
 	private String doner_id;
@@ -11,6 +22,17 @@ public class Transfer {
 	private String time_slot;
 
 	public Transfer() {}
+	
+	public Transfer (TransferDTO core) {
+		this.transfer_id = core.getTransferId();
+		this.item_id = core.getItemId();
+		this.item_title = core.getItemTitle();
+		this.doner_id = core.getDonerId();
+		this.recipient_id = core.getRecipientId();
+		this.status = core.getStatus();
+		this.site_name = core.getSiteName();
+		this.time_slot = core.getTimeSlot();
+	}
 
 	public String getTransferId() {
 		return transfer_id;
